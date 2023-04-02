@@ -1,5 +1,59 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-<h1>WELCOME TO YOUR LOGIN</h1>
+<section>
+    <div class = "form-box">
+        <div class = "form-value">
+            <!--
+            <form action = "">
+                <h2><span>F</span>inTrac<span>k</span> Login</h2>
+                <div class = "inputbox">
+                    <ion-icon name="person-outline"></ion-icon>  
+                    <input type="text" required>
+                    <label for= "username">Username</label>
+                </div>
+                <div class = "inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" required>
+                    <label for= "">Password</label>
+                </div>
+            <div class = "forgetPassword">
+                <label for=""><input type="checkbox">Remember me <a href="#">
+                    <strong>Forgot Password?</strong></a></label>
+                 
+                
+            </div>
+            <button>Log in</button>
+            <div class = "register">
+                <p>Don't have an account? <a href ="{% url 'user-register' %}">Register</a></p>
+            </div>   
+        </form>
+        </div>
+    </div>
+</section>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+-->
+<form method = "POST" autocomplete="off">
+    {% csrf_token %}
+    {{form.username}}
+
+    <br>
+
+    {{form.password}}
+
+    <br>
+
+    <button type="submit" class="btn btn-prc    imary navbar-btn text-white w-100 p-2"><i class="fa fa-key" aria-hidden="true"></i> &nbsp;  Login</button>
+    <br>
+    <br>
+    {{form.non_field_errors}}
+    <div class = "text-center">
+        <a href=" {% url 'user-register' %} "> Don't have an account?</a>
+        <br>
+        <a href="#"> forgot password?</a>
+    </div>
+</form>
+</div>
 {% endblock content %}
