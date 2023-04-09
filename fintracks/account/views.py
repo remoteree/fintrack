@@ -18,6 +18,7 @@ def user_register(request):
             user = form.save()
             user.is_active = False
             user.save()
+            return redirect('user-login')
     context = {'form':form}
     messages.success(request, "Registered successfully")
     return render(request, 'account/register.html', context)

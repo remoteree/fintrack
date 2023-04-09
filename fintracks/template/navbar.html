@@ -8,7 +8,7 @@
         <li><a href="#">About</a></li>
         {% if request.user.is_authenticated %}
         <li><a href="{% url 'user-dashboard' %}">Dashboard</a></li>
-        <li><a href="{% url 'user-login' %}">Sign Out</a></li>
+        <li><a href="{% url 'user-logout' %}">Sign Out</a></li>
         {% else %}
         <li><a href="{% url 'user-login' %}">Sign in</a></li>
         <li><a href="{% url 'user-register' %}">Sign Up</a></li>

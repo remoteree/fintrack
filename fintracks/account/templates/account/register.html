@@ -1,6 +1,70 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>WELCOME TO YOUR REGISTER</h1>
 
+    <div class = "container">
+        <div class="title"><center>Sign Up To <strong><span>FinTrack!</span></strong></center></div>
+        <form method = "POST"action="">
+            {% csrf_token %}
+            <div class = "user-details">
+                <div class = "input-box">
+                    <span class ="details">Username</span>
+                    {{form.username}}
+                </div>
+                <div class = "input-box">
+                    <span class ="details">Email</span>
+                    {{form.email}}
+                </div>
+                <div class = "input-box">
+                    <span class ="details">Password</span>
+                     {{form.password1}}
+                </div>
+                <div class = "input-box">
+                    <span class ="details">Confirm Password</span>
+                    {{form.password2}}
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit"> Create Account</button>
+            </div>
+        </form>
+        
+    </div>
+    
+
+
+
+
+
+<!--
+<h1>WELCOME TO YOUR REGISTER</h1>
+<form method = "POST" autocomplete="off">
+    {% csrf_token %}
+    {{form.username}}
+
+    <br><br>
+
+    {{form.email}}
+
+    <br><br>
+
+    {{form.password1}}
+
+    <br>
+
+    {{form.password2}}
+
+
+<br><br>
+
+    <button type="submit"> Create Account</button>
+    <br>
+    <br>
+   
+    <div class = "text-center">
+        <a href=" {% url 'user-login' %} "> Already have an account?</a>
+    </div>
+
+</form>
+-->
 {% endblock content %}
