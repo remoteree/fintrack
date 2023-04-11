@@ -1,0 +1,24 @@
+<nav>
+    <div class="navbar">
+      <div class="logo">
+        <a href="#">My Website</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href=" {% url 'index' %} ">Home</a></li>
+        <li><a href="#">About</a></li>
+        {% if request.user.is_authenticated %}
+        <li><a href="{% url 'user-dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'user-logout' %}">Sign Out</a></li>
+        {% else %}
+        <li><a href="{% url 'user-login' %}">Sign in</a></li>
+        <li><a href="{% url 'user-register' %}">Sign Up</a></li>
+      </ul>
+      {% endif %}
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </div>
+  </nav>
+  
